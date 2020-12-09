@@ -1,0 +1,92 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url(conifer-background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 200%;
+}
+
+.titleLineOne {
+    color: red;
+}
+
+.titleLineTwo {
+    color: green;
+}
+
+.envelopeSection {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#envelope {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 5%;
+    background: url(paper-texture.jpg) no-repeat bottom left fixed;
+    background-size: cover;
+    font-family: 'Rock Salt', cursive;
+    font-weight: bold;
+    padding: 5%;
+    box-shadow: -2px 2px 20px black;
+    border-radius: 3px;
+    transition: all 1s ease;
+    text-decoration: none;
+}
+
+#envelope:active {
+    transform: scale(0.9);
+}
+
+.senderInfo {
+    height: 40%;
+    width: 85%;
+}
+
+.postageSection {
+    width: 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.postageBox {
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+}
+
+.recipientInfo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: none;;
+}
+
+.letter {
+    display: block;
+    color: orange;
+}
