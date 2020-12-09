@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    background: url(conifer-background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    height: 15vh;
+    width: 100vw;
+}
+
+p {
+    margin: 15px;
+    color: orange;
+    background-color: rgba(37, 37, 37, 0.9);
+}
+
+.indent {
+    margin-left: 40px;
+}
