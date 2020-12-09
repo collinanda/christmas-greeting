@@ -11,26 +11,35 @@ body {
 
 header {
     width: 100vw;
-    height: 10vh;
+    height: 40vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-family: 'Great Vibes', cursive;
+    font-size: 200%;
+}
+
+.titleLineOne {
     color: red;
-    transform: skewY(-5deg);
+}
+
+.titleLineTwo {
+    color: green;
 }
 
 .envelopeSection {
     width: 100vw;
-    height: 90vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.envelope {
+#envelope {
     width: 80%;
-    height: 30%;
+    height: 50%;
     display: flex;
     flex-wrap: wrap;
     font-size: 5%;
@@ -42,6 +51,11 @@ header {
     box-shadow: -2px 2px 20px black;
     border-radius: 3px;
     transition: all 1s ease;
+    text-decoration: none;
+}
+
+#envelope:active {
+    transform: scale(0.9);
 }
 
 .senderInfo {
@@ -68,6 +82,11 @@ header {
     justify-content: center;
 }
 
-p {
-    margin: 0;
+main {
+    display: none;;
+}
+
+.letter {
+    display: block;
+    color: orange;
 }
