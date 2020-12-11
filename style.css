@@ -1,3 +1,8 @@
+/* bring in the google fonts, this is done by just googling Google Fonts and then going to "select this style" and clicking "import" instead of link */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 html, body {
     margin: 0;
 }
@@ -18,14 +23,15 @@ video {
     left: 0;
 }
 
-header, .envelopeSection, .letter {
+header, #envelope, .letter {
     position: relative;
     /* keeps content in front of video */
 }
 
 header {
     width: 100vw;
-    height: 40vh;
+    /* height: 40vh; paul removed and added padding */
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,6 +39,10 @@ header {
     text-align: center;
     font-family: 'Great Vibes', cursive;
     font-size: 200%;
+}
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 3s;
 }
 
 .titleLineOne {
@@ -44,65 +54,159 @@ header {
 }
 
 .envelopeSection {
-    width: 100vw;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    font-family: 'Caveat', cursive;
+    font-size: 1em;
+    height: 72vh;
 }
 
-#envelope {
-    width: 80%;
-    height: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 5%;
-    background: url(/media/paper-texture.jpeg) no-repeat center center fixed;
-    background-size: contain;
-    font-family: 'Rock Salt', cursive;
-    font-weight: bold;
-    padding: 5%;
-    box-shadow: -2px 2px 20px black;
+#envelope__shape:active {
+    transform: scale(0.95);
+}
+
+#envelope__shape {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 50%; /* magic way to create responsive ratio WITHOUT content inside (wouldn't work with content inside other than FIXED content */
+    background-image: url('envelope-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
     border-radius: 3px;
     transition: all 0.5s ease;
-    text-decoration: none;
 }
-
-#envelope:active {
-    transform: scale(0.97);
+.envelope__postage-stamp,
+.envelope__sender-info,
+.envelope__recipient-info {
+    position: absolute;
+    font-size: 1.5em;
 }
-
-.senderInfo {
-    height: 40%;
-    width: 85%;
+.envelope__postage-stamp {
+    height: 80px;
+    width: 60px;
+    top: 15px;
+    right: 15px;
+    border: 3px dashed rgba(0,0,0,0.1);
 }
-
-.postageSection {
-    width: 15%;
+.envelope__sender-info {
+    top: 15px;
+    left: 15px;
+    color: #333;
+}
+.envelope__recipient-info {
+    /* height: 300px;
+    width: 550px;
+    removed since positioning center and aligning with flex, no longer
+    needed width/height */
+    top: 50%;
+    left: 50%;
+    color: #333;
+    /* below is the secret to RESPONSIBLY centering a 50% top and 50% left ABSOLUTE item that HAS to be inside of a parent that has display:RELATIVE */
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
+    /* center the contents */
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
-.postageBox {
-    width: 100%;
-    height: 50%;
-    border: 1px solid black;
+/* When the browser is at least 1400px and below */
+@media screen and (max-width: 1400px) {
+    .envelope__sender-info {
+        font-size: 1.5em;
+    }
+    .envelope__recipient-info {
+        font-size: 1.5em;
+    }
 }
 
-.recipientInfo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+/* When the browser is at least 600px and below */
+@media screen and (max-width: 600px) {
+    .envelope__sender-info {
+        font-size: 1.3em;
+    }
+    .envelope__recipient-info {
+        font-size: 1.3em;
+    }
+    .envelope__postage-stamp {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+    }
 }
+
+/* When the browser is at least 500px and below */
+@media screen and (max-width: 500px) {
+    .envelope__sender-info {
+        font-size: 1.1em;
+    }
+    .envelope__recipient-info {
+        font-size: 1.1em;
+    }
+    .envelope__postage-stamp {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+    }
+}
+
+/* When the browser is at least 400px and below */
+@media screen and (max-width: 400px) {
+    .envelope__sender-info {
+        font-size: 0.8em;
+    }
+    .envelope__recipient-info {
+        font-size: 0.8em;
+    }
+    .envelope__postage-stamp {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+    }
+}
+
+/* When the browser is at 320px and below */
+@media screen and (max-width: 320px) {
+    .envelope__sender-info {
+        font-size: 0.7em;
+    }
+    .envelope__recipient-info {
+        font-size: 0.7em;
+    }
+    .envelope__postage-stamp {
+        width: 30px;
+        height: 30px;
+        border-width: 2px;
+    }
+}
+
 
 main {
     display: none;
-    padding: 15px;
 }
 
+/* Intentionally called as a class and not id, this class is applied after the "showLetter()" funtion is called */
 .letter {
-    /* inherited relative pos to stay on top of video */
+    /* @line 26 - inherited relative pos to stay on top of video */
     display: block;
-    color: white;
+    color: #e0dddd;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    font-family: 'Playfair Display', serif;
+    margin: 10px;
+}
+
+h4 {
+    margin: 0;
+    color: green;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.indent {
+    margin-left: 40px;
 }
