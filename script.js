@@ -1,15 +1,11 @@
-let envelope = document.getElementById('envelope');
+let envelope = document.getElementById('envelope__shape');
 
 function showLetter() {
     let letter = document.getElementById('letter');
-    letter.classList.add('letter');
-    setTimeout(scrollIntoView(letter); }, 1000);
+    // adding fade animation &  '.letter' class from CSS
+    letter.classList.add('animate__animated', 'animate__fadeIn', 'letter');
+    // delay to allow user to see envelope being pushed
+    setTimeout( function() {letter.scrollIntoView(); }, 500);
 }
-
-
-// function timeFunction() {
-//     setTimeout(function(){ alert("After 5 seconds!"); }, 5000);
-// }
-
 
 envelope.addEventListener('click', showLetter);
