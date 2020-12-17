@@ -1,7 +1,5 @@
 /* bring in the google fonts, this is done by just googling Google Fonts and then going to "select this style" and clicking "import" instead of link */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Great+Vibes&family=Lato:wght@300;700&family=Playfair+Display:wght@400;700&family=Prata&display=swap');
 
 html, body {
     margin: 0;
@@ -10,8 +8,6 @@ html, body {
 body {
     width: 100vw;
     height: 100vh;
-    /* background: url(conifer-background.jpg) no-repeat center center fixed;
-    background-size: cover; */
 }
 
 video {
@@ -59,10 +55,6 @@ header {
     height: 72vh;
 }
 
-#envelope__shape:active {
-    transform: scale(0.95);
-}
-
 #envelope__shape {
     width: 90%;
     position: relative;
@@ -75,6 +67,11 @@ header {
     border-radius: 3px;
     transition: all 0.5s ease;
 }
+
+#envelope__shape:active {
+    transform: scale(0.95);
+}
+
 .envelope__postage-stamp,
 .envelope__sender-info,
 .envelope__recipient-info {
@@ -114,14 +111,14 @@ header {
 }
 
 /* When the browser is at least 1400px and below */
-@media screen and (max-width: 1400px) {
+/* @media screen and (max-width: 1400px) {
     .envelope__sender-info {
         font-size: 1.5em;
     }
     .envelope__recipient-info {
         font-size: 1.5em;
     }
-}
+} */
 
 /* When the browser is at least 600px and below */
 @media screen and (max-width: 600px) {
@@ -202,11 +199,14 @@ main {
 
 h4 {
     margin: 0;
-    color: green;
+    color: lightblue;
     font-size: 1.2em;
     font-weight: bold;
+    font-family: 'Lato', sans-serif;
 }
 
-.indent {
-    margin-left: 40px;
+a {
+    margin-left: 25%;
+    color: lightblue;
+    font-family: 'Playfair Display', serif;
 }
